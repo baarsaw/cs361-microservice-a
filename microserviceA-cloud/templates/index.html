@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sessions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sessions</h1>
+        <p> Study Sessions Microservice written by baars@oregonstate.edu.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Start Time</th>
+                    <th>Duration (min)</th>
+                    <th>Break Time (min)</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in sessions %}
+                <tr>
+                    <td>{{ session['id'] }}</td>
+                    <td>{{ session['sessionSubject'] }}</td>
+                    <td>{{ session['startTime'] }}</td>
+                    <td>{{ session['duration'] }}</td>
+                    <td>{{ session['breakTime'] }}</td>
+                    <td>{{ session['notes'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
