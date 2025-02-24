@@ -126,7 +126,10 @@ base_url:
 ]
   ```
 
-### 4.GET - get all sessions filtered by Subject (CURRENTLY NOT WORKING)
+### 4.GET - get all sessions filtered by Subject 
+  (CURRENTLY NOT WORKING)
+
+  This functionality was working locally but is not working once deployed to GCP. I will continue to troubleshoot and attempt to add this functionality.
 
 ### 5.DELETE - delete by ID
   
