@@ -7,7 +7,7 @@ A simple REST API microservice to manage study sessions.
 The app will not run locally since it needs to communicate with the Datastore Instance located on the Google Cloud Platform.
 
 ## Database viewer
-Since this app can't be run locally, there is a frontend provided for this app for the user to view the full contents of the database. The link is below.
+Since this app can't be run locally, there is a frontend provided for this app for the user to view the full contents of the database. The link is below. Once you make an HTTP request, please refresh the page to see any changes.
 
   https://cs361-microservice-a-123.uw.r.appspot.com/
 
@@ -63,24 +63,25 @@ base_url:
 
   RESPONSE:
   ```
-    [
-        {
-            "breakTime": 300,
-            "duration": 1500,
-            "id": 5634601401712640,
-            "notes": "Completed reading.",
-            "sessionSubject": "CS361 Project",
-            "startTime": "2025-02-10T10:05:00Z"
-        },
-        {
-            "breakTime": 300,
-            "duration": 1500,
-            "id": 5657818854064128,
-            "notes": "Completed reading.",
-            "sessionSubject": "CS361 Project",
-            "startTime": "2025-02-10T10:05:00Z"
-        }
-    ]
+  status_code: 200 OK
+  [
+      {
+          "breakTime": 300,
+          "duration": 1500,
+          "id": 5634601401712640,
+          "notes": "Completed reading.",
+          "sessionSubject": "CS361 Project",
+          "startTime": "2025-02-10T10:05:00Z"
+      },
+      {
+          "breakTime": 300,
+          "duration": 1500,
+          "id": 5657818854064128,
+          "notes": "Completed reading.",
+          "sessionSubject": "CS361 Project",
+          "startTime": "2025-02-10T10:05:00Z"
+      }
+  ]
   ```
 
 ### 3.GET - get a spsecified number of most recent sessions
@@ -96,39 +97,71 @@ base_url:
 
   RESPONSE:
   ```
-      [
-        {
-            "breakTime": 50000,
-            "duration": 1,
-            "id": 5080330100801536,
-            "notes": "Didn't do anything.",
-            "sessionSubject": "CS361 Project",
-            "startTime": "2025-03-24T10:05:00Z"
-        },
-        {
-            "breakTime": 1000,
-            "duration": 1000,
-            "id": 5106202648248320,
-            "notes": "Completed next weeks assignemnt.",
-            "sessionSubject": "CS361 Project",
-            "startTime": "2025-02-10T11:05:00Z"
-        },
-        {
-            "breakTime": 300,
-            "duration": 1500,
-            "id": 5634601401712640,
-            "notes": "Completed reading.",
-            "sessionSubject": "CS361 Project",
-            "startTime": "2025-02-10T10:05:00Z"
-        }
-    ]
+  status_code: 200 OK
+  [
+    {
+        "breakTime": 50000,
+        "duration": 1,
+        "id": 5080330100801536,
+        "notes": "Didn't do anything.",
+        "sessionSubject": "CS361 Project",
+        "startTime": "2025-03-24T10:05:00Z"
+    },
+    {
+        "breakTime": 1000,
+        "duration": 1000,
+        "id": 5106202648248320,
+        "notes": "Completed next weeks assignemnt.",
+        "sessionSubject": "CS361 Project",
+        "startTime": "2025-02-10T11:05:00Z"
+    },
+    {
+        "breakTime": 300,
+        "duration": 1500,
+        "id": 5634601401712640,
+        "notes": "Completed reading.",
+        "sessionSubject": "CS361 Project",
+        "startTime": "2025-02-10T10:05:00Z"
+    }
+]
   ```
 
 ### 4.GET - get all sessions filtered by Subject (CURRENTLY NOT WORKING)
 
-### 4.DELETE - delete by ID
+### 5.DELETE - delete by ID
+  
+  Delete a session entry by id. The session_id_number below should be an integer matching an id of session.
+  
+  REQUEST:
+  ```
+  endpoint_url = base_url + "/sessions/session_id_number"
+  response = requests.delete(endpoint_url)
+  ```
+  
+  RESPONSE:
+  ```
+  Status_code: 200 OK
+  {
+    "message": "Session deleted"
+  }
+  ```
 
-Delete a 
-
+### 6.DELETE - delete all
+  
+  Delete all sessions in the database.
+  
+  REQUEST:
+  ```
+  endpoint_url = base_url + "/sessions"
+  response = requests.delete(endpoint_url)
+  ```
+  
+  RESPONSE:
+  ```
+  Status_code: 200 OK
+  {
+    "message": "All sessions cleared"
+  }
+  ```
 
 
