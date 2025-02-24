@@ -15,9 +15,9 @@ base_url:
 
 ### Endpoints Available
 
-1.POST
-  a. post a new session
-  b. example
+1.POST - post a new session
+  In this example, we post a new session with the data below to the database.
+  REQUEST:
   ```
     new_session = {
     "startTime": "2025-02-24T14:10:56-07:00",
@@ -29,4 +29,36 @@ base_url:
 
     endpoint_url = base_url + "/sessions"
     response = requests.post(endpoint_url, json=new_session)
+  ```
+  RESPONSE:
+  ```
+    Status_Code = 201 Created
+    {
+    "breakTime": 300,
+    "duration": 1500,
+    "id": 5657818854064128,
+    "notes": "Completed reading.",
+    "sessionSubject": "CS361 Project",
+    "startTime": "2025-02-10T10:05:00Z"
+    }
+  ```
+
+2.GET - get all sessions
+  In this example, we return a list of all sessions
+  ```
+    endpoint_url = base_url + "/sessions"
+    response = requests.get(endpoint_url)
+  ```
+
+3.GET - get a specific number of most recent sessions
+  In this example, we set the limit parameter equal to 3 to retrieve the 3 most recent sessions.
+  ```
+    endpoint_url = base_url + "/sessions?limit=3"
+    response = requests.get(endpoint_url)
+  ```
+4.GET - get all sessions filtered by Subject (CURRENTLY NOT WORKING)
+
+  ```
+    endpoint_url = base_url + "/sessions?subject=3"
+    response = requests.get(endpoint_url)
   ```
