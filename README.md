@@ -8,5 +8,6 @@ The app will not run locally since it needs to communicate with the Datastore In
 
 ### BASE URL
 ```
-base_url: "https://cs361-microservice-a-123.uw.r.appspot.com"
+base_url: 
+"https://cs361-microservice-a-123.uw.r.appspot.com"
 ```
