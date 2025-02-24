@@ -173,6 +173,6 @@ base_url:
 
 ## UML Diagram
 
-<img width="559" alt="uml-diagram" src="https://github.com/cs361-microservices-a/uml-diagram.png" />
+<img width="559" alt="Image" src="https://github.com/user-attachments/assets/828db514-81de-478e-98e9-1e797a0ceae1" />
 
 
