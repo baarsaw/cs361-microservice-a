@@ -6,16 +6,21 @@ A simple REST API microservice to manage study sessions.
 
 The app will not run locally since it needs to communicate with the Datastore Instance located on the Google Cloud Platform.
 
-### BASE URL
+## Database viewer
+Since this app can't be run locally, there is a frontend provided for this app for the user to view the full contents of the database. The link is below.
+
+  https://cs361-microservice-a-123.uw.r.appspot.com/
+
+## BASE URL
 ```
 base_url:
 
 "https://cs361-microservice-a-123.uw.r.appspot.com"
 ```
 
-### Endpoints Available
+## Endpoints Available
 
-1.POST - post a new session
+### 1.POST - post a new session
 
   In this example, we post a new session with the data below to the database.
   
@@ -45,7 +50,7 @@ base_url:
     }
   ```
 
-2.GET - get all sessions
+### 2.GET - get all sessions
 
   In this example, we return a list of all sessions
 
@@ -54,6 +59,8 @@ base_url:
     endpoint_url = base_url + "/sessions"
     response = requests.get(endpoint_url)
   ```
+  In the response below, there are two sessions total in the database. They are returned as a list.
+
   RESPONSE:
   ```
     [
@@ -76,15 +83,52 @@ base_url:
     ]
   ```
 
-3.GET - get a specific number of most recent sessions
-  In this example, we set the limit parameter equal to 3 to retrieve the 3 most recent sessions.
+### 3.GET - get a spsecified number of most recent sessions
+
+  In this example, we set the limit parameter equal to 3 in order to retrieve the 3 most recent sessions.
+
+  REQUEST:
   ```
     endpoint_url = base_url + "/sessions?limit=3"
     response = requests.get(endpoint_url)
   ```
-4.GET - get all sessions filtered by Subject (CURRENTLY NOT WORKING)
+  The three most recent sessions sorted chronologically are returned.
 
+  RESPONSE:
   ```
-    endpoint_url = base_url + "/sessions?subject=3"
-    response = requests.get(endpoint_url)
+      [
+        {
+            "breakTime": 50000,
+            "duration": 1,
+            "id": 5080330100801536,
+            "notes": "Didn't do anything.",
+            "sessionSubject": "CS361 Project",
+            "startTime": "2025-03-24T10:05:00Z"
+        },
+        {
+            "breakTime": 1000,
+            "duration": 1000,
+            "id": 5106202648248320,
+            "notes": "Completed next weeks assignemnt.",
+            "sessionSubject": "CS361 Project",
+            "startTime": "2025-02-10T11:05:00Z"
+        },
+        {
+            "breakTime": 300,
+            "duration": 1500,
+            "id": 5634601401712640,
+            "notes": "Completed reading.",
+            "sessionSubject": "CS361 Project",
+            "startTime": "2025-02-10T10:05:00Z"
+        }
+    ]
   ```
+
+### 4.GET - get all sessions filtered by Subject (CURRENTLY NOT WORKING)
+
+### 4.DELETE - delete by ID
+
+Delete a 
+
+
+
