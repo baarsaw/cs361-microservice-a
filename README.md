@@ -4,20 +4,13 @@ Author: Sawyer Baar
 ## Description
 A simple REST API microservice to manage study sessions.
 
-files:
+## Deployment
 
-  -microserviceA-cloud/ -- python code deployed to Google App Engine
-  
-  -microserviceA-test/ -- API test program
-  
-  -readme.md
-
-The app will not run locally since it needs to communicate with the Datastore Instance located on the Google Cloud Platform.
-
-## Database viewer
-Since this app can't be run locally, there is a frontend provided for this app for the user to view the full contents of the database. The link is below. Once you make an HTTP request, please refresh the page to see any changes.
+This app is deployed to Google App Engine. There is a frontend provided for this app that allows the user to view the full contents of the database. The link is below. Once you make an HTTP request, please refresh the page to see any changes.
 
   https://cs361-microservice-a-123.uw.r.appspot.com/
+
+As a note, this app will not run locally since it needs to communicate with the Datastore Database Instance located on the Google Cloud Platform.
 
 ## BASE URL
 ```
