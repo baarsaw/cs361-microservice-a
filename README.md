@@ -16,7 +16,9 @@ base_url:
 ### Endpoints Available
 
 1.POST - post a new session
+
   In this example, we post a new session with the data below to the database.
+  
   REQUEST:
   ```
     new_session = {
@@ -44,10 +46,34 @@ base_url:
   ```
 
 2.GET - get all sessions
+
   In this example, we return a list of all sessions
+
+  REQUEST:
   ```
     endpoint_url = base_url + "/sessions"
     response = requests.get(endpoint_url)
+  ```
+  RESPONSE:
+  ```
+    [
+        {
+            "breakTime": 300,
+            "duration": 1500,
+            "id": 5634601401712640,
+            "notes": "Completed reading.",
+            "sessionSubject": "CS361 Project",
+            "startTime": "2025-02-10T10:05:00Z"
+        },
+        {
+            "breakTime": 300,
+            "duration": 1500,
+            "id": 5657818854064128,
+            "notes": "Completed reading.",
+            "sessionSubject": "CS361 Project",
+            "startTime": "2025-02-10T10:05:00Z"
+        }
+    ]
   ```
 
 3.GET - get a specific number of most recent sessions
