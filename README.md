@@ -13,13 +13,16 @@ This app is deployed to Google App Engine. There is a frontend provided for this
 As a note, this app will not run locally since it needs to communicate with the Datastore Database Instance located on the Google Cloud Platform.
 
 ## BASE URL
+
+All HTTP requests to the API can be made to the base_url below. Available endpoints are documented in the next section. 
+
 ```
 base_url:
 
 "https://cs361-microservice-a-123.uw.r.appspot.com"
 ```
 
-## Endpoints Available
+## Endpoints
 
 ### 1.POST - post a new session
 
