@@ -171,4 +171,7 @@ base_url:
   }
   ```
 
+## UML Diagram
+
+(/uml-diagram.png)
 
